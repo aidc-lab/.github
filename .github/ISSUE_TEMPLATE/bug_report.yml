@@ -1,0 +1,68 @@
+name: Bug report
+description: Something behaves differently than it should.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please search the existing issues first.
+
+        If this is a **security** problem, stop here and follow [SECURITY.md](https://github.com/aidc-lab/.github/blob/main/SECURITY.md) instead of opening a public issue.
+  - type: input
+    id: project
+    attributes:
+      label: Repository or project
+      description: Which repository, app or plugin is affected?
+      placeholder: dsh-movie-workbench
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence that triggers the problem.
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v1.2.3 / 4f9c2a1 / DSH 0.9.0
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Docker or server
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, screenshots or recordings
+      description: Paste text rather than photographing a screen. Drag files in if that is easier.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues for this problem.
+          required: true
+        - label: I reproduced it on the latest release or on `main`.

@@ -1,0 +1,11 @@
+# Generated previews and local tooling
+preview/
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor / logs
+*.log
+.idea/
+.vscode/
